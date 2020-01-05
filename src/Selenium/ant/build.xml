@@ -1,0 +1,7 @@
+<project name="SecondAntPro" default="B" basedir=".">
+<property name="a" value="10" />
+	<target name="B">
+		<echo>The value of a is ${a}</echo>
+	</target>
+</project>
+			

@@ -1,0 +1,23 @@
+<project name="FirstAntPro" default="A" basedir="." >
+	<target name="A">
+		<mkdir dir="Build"/>	
+		<copy todir="Build">
+		<fileset dir="src">
+	<include name="*.java"/>
+	</fileset>
+		</copy>		
+	</target>
+</project>
+			
+
+
+
+<!--<echo>Deleting Directory</echo>
+	    <delete dir="Build"> </delete> 
+		<delete file="mm.txt" />  -->
+
+		
+
+
+	
+	

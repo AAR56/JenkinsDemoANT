@@ -1,0 +1,49 @@
+<project name="CompleteANT" default="run" basedir=".">
+	<property name="sourcedir" value="source_dir" />
+	<property name="builddir" value="build_dir" />
+	<property name="classdir" value="class_dir" />
+	<property name="jardir" value="jar_dir" />
+	<property name="filename" value="Sample" />
+	
+	<!-- Clean -->
+	<target name="clean">
+		<echo>Performing Cleaning Process</echo>
+		<delete dir="${builddir}" />
+	</target>
+	
+	<!-- Compilation -->
+	<target name="compile" depends="clean">
+		<echo>Performing Compilation Process</echo>
+		<mkdir dir="${builddir}/${classdir}" />
+		<javac srcdir="${sourcedir}" destdir="${builddir}/${classdir}" />
+	</target>
+	
+	<!-- JarPackage -->
+	<target name="jarpack" depends="compile">
+		<echo>Creating JAR Package</echo>
+		<mkdir dir="${builddir}/${jardir}" />
+		<jar basedir="${builddir}/${classdir}" destfile="${builddir}/${jardir}/${filename}.jar" >
+		<manifest>
+		<attribute name="main-Class" value="${filename}" />
+		</manifest>
+		</jar>	
+	</target>
+	
+	
+	<!-- Execution -->
+	<target name="run" depends="jarpack">
+		<echo>Performing Execution Process</echo>
+		<java jar="${builddir}/${jardir}/${filename}.jar" fork='true'/>
+	</target>
+	</project>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+			

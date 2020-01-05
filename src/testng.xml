@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<suite name="Suite1" parallel="Methods">
+  <test name="First">
+    <classes>
+       <class name="com.testngANT.classO1" />
+       <class name="com.testngANT.classO2" />
+       <class name="com.testngANT.classO3" />
+       <class name="com.testngANT.classO4" />
+    </classes>
+  </test>
+</suite>
